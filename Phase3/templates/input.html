@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.0/css/bootstrapValidator.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+  </head>
+  <body>
+    <div class="container">
+      <form class="well form-horizontal" action="{{ url_for('predict')}}" method="POST"  id="Hotel_form">
+  <fieldset>
+  
+  <!-- Form Name -->
+    <center>
+  <legend><b><i>HOTEL BOOKING PREDICTION</i></b></legend>
+    </center>
+    
+  <!-- Select Basic -->
+     
+  <div class="form-group d-flex justify-content-center align-items-center"> 
+    <label class="col-md-2 control-label"><i>HOTEL</i></label>
+      <div class="col-md-3 selectContainer">
+      <div class="input-group">
+      <select name="hotel" class="form-control selectpicker" >
+        <option value=" " >Please select hotel type</option>
+        <option>City Hotel</option>
+        <option>Resort Hotel</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  
+    <!-- Select Basic -->
+     
+  <div class="form-group d-flex justify-content-center align-items-center"> 
+    <label class="col-md-2 control-label"><i>MEAL</i></label>
+      <div class="col-md-3 selectContainer">
+      <div class="input-group">
+      <select name="meal" class="form-control selectpicker" >
+        <option value=" " >Please select meal type</option>
+        <option>BB</option>
+        <option>HB</option>
+        <option>SC</option>
+        <option>FB</option>
+        <option>Undefined</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  
+    <!-- Select Basic -->
+     
+  <div class="form-group d-flex justify-content-center align-items-center"> 
+    <label class="col-md-2 control-label"><i>MARKET SEGMENT</i></label>
+      <div class="col-md-3 selectContainer">
+      <div class="input-group">
+      <select name="marketsegment" class="form-control selectpicker" >
+        <option value=" " >Please select market segment</option>
+        <option>Online TA</option>
+        <option>Offline TA/TO</option>
+        <option>Groups</option>
+        <option>Direct</option>
+        <option>Corporate</option>
+        <option>Complementary</option>
+        <option>Aviation</option>
+        <option>Undefined</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  
+   <!-- Select Basic -->
+     
+  <div class="form-group d-flex justify-content-center align-items-center"> 
+    <label class="col-md-2 control-label"><i>CUSTOMER TYPE</i></label>
+      <div class="col-md-3 selectContainer">
+      <div class="input-group">
+      <select name="customertype" class="form-control selectpicker" >
+        <option value=" " >Please select customer type</option>
+        <option>Transient</option>
+        <option>Transient Party</option>
+        <option>Contract</option>
+        <option>Group</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  
+    <!-- Select Basic -->
+     
+  <div class="form-group d-flex justify-content-center align-items-center"> 
+    <label class="col-md-2 control-label"><i>DEPOSIT TYPE</i></label>
+      <div class="col-md-3 selectContainer">
+      <div class="input-group">
+      <select name="deposittype" class="form-control selectpicker" >
+        <option value=" " >Please select deposit type</option>
+        <option>No Deposit</option>
+        <option>Non Refund</option>
+        <option>Refundable</option>
+      </select>
+    </div>
+  </div>
+  </div>
+  
+    <!-- radio checks -->
+   <div class="form-group d-flex justify-content-center align-items-center">
+                          <label class="col-md-2 control-label"><i>REQUIRE CAR PARKING SPACE?</i></label>
+                          <div class="col-md-3">
+                              <div class="radio">
+                                  <label>
+                                      <input type="radio" name="carparking" value="yes" /> Yes
+                                  </label>
+                              </div>
+                              <div class="radio">
+                                  <label>
+                                      <input type="radio" name="carparking" value="no" /> No
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+   <!-- Text input-->
+  
+  <div class="form-group d-flex justify-content-center align-items-center">
+    <label class="col-md-2 control-label"><i>PREVIOUS CANCELLATIONS</i></label>  
+    <div class="col-md-3 inputGroupContainer">
+    <div class="input-group">
+    <input  name="previouscancellations" placeholder="Previous cancellations" class="form-control"  type="text">
+      </div>
+    </div>
+  </div>
+    
+  
+  
+  <!-- Text input-->
+  
+  <div class="form-group d-flex justify-content-center align-items-center">
+    <label class="col-md-2 control-label"><i>TOTAL GUESTS</i></label>  
+    <div class="col-md-3 inputGroupContainer">
+    <div class="input-group">
+    <input  name="totalguests" placeholder="Total guests" class="form-control"  type="text">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  
+  <div class="form-group d-flex justify-content-center align-items-center">
+    <label class="col-md-2 control-label"><i>TOTAL STAYS</i></label>  
+    <div class="col-md-3 inputGroupContainer">
+    <div class="input-group">
+    <input  name="totalstays" placeholder="Total stays" class="form-control"  type="text">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  
+  <div class="form-group d-flex justify-content-center align-items-center">
+    <label class="col-md-2 control-label"><i>LEAD TIME</i></label>  
+    <div class="col-md-3 inputGroupContainer">
+    <div class="input-group">
+    <input  name="leadtime" placeholder="Lead time" class="form-control"  type="text">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  
+  <div class="form-group d-flex justify-content-center align-items-center">
+    <label class="col-md-2 control-label"><i>TOTAL NUMBER OF SPECIAL REQUESTS</i></label>  
+    <div class="col-md-3 inputGroupContainer">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input  name="specialrequests" placeholder="Total number of special requests" class="form-control"  type="text">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Text input-->
+  
+  <div class="form-group d-flex justify-content-center align-items-center">
+    <label class="col-md-2 control-label"><i>BOOKING CHANGES</i></label>  
+    <div class="col-md-3 inputGroupContainer">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input  name="bookingchanges" placeholder="Booking changes" class="form-control"  type="text">
+      </div>
+    </div>
+  </div>
+  
+    
+  <!-- Button -->
+  <div class="form-group d-flex justify-content-center align-items-center">
+    <label class="col-md-2 control-label"></label>
+    <div class="col-md-3">
+      <button type="submit" class="btn btn-warning" >Submit <span class="glyphicon glyphicon-send"></span></button>
+    </div>
+  </div>
+  
+  </fieldset>
+  </form>
+  </div>
+      </div><!-- /.container -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
